@@ -13,7 +13,7 @@ async function cargarCiudad() {
         let data = await fetch(urlApi)
         res = await data.json()
         valInput()
-        span.textContent = res.name
+        span.textContent = `${res.name}, ${res.sys.country}`
         tempe.textContent = `${parseInt(res.main.temp)}°C`
         descripcion.textContent = res.weather[0].description
         let iconCode = res.weather[0].icon
